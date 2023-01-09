@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    margin: 35px 35px 0 35px;
+    &-icon {
+        width: 30%;
+        cursor: pointer;
+    }
+    &-item {
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        div {
+            cursor: pointer;
+        }
+        &__contact {
+            background-color: #608af5;
+            padding: 10px;
+            color: #ffff;
+        }
+    }
+}
