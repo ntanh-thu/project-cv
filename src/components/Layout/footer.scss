@@ -1,0 +1,44 @@
+@import '../../sass/constant.scss';
+
+.contact {
+    margin: 0 100px;
+    &-title {
+        @include fontPoppins(24px);
+        color: #14279b;
+        padding: 10px;
+    }
+    &-icon {
+        display: flex;
+        justify-content: space-evenly;
+        &-item {
+            display: flex;
+            flex-direction: column;
+            text-transform: capitalize;
+            @include fontPoppins(24px);
+            span {
+                background-image: url('../../assets/imgs/Vector.png');
+                width: 120px;
+                height: 120px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+    }
+}
+.footer {
+    &-item {
+        display: flex;
+        justify-content: space-between;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
