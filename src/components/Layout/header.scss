@@ -1,9 +1,14 @@
+@import '../../sass/constant.scss';
+
 .header {
     display: flex;
     justify-content: space-around;
     margin: 35px 35px 0 35px;
     &-icon {
         width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
     }
     &-item {
@@ -12,11 +17,16 @@
         width: 70%;
         div {
             cursor: pointer;
+            @include fontPoppins(18px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         &__contact {
-            background-color: #608af5;
             padding: 10px;
+            background-color: #608af5;
             color: #ffff;
+            border-radius: 10px;
         }
     }
 }
