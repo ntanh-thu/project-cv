@@ -1,0 +1,29 @@
+@import './constant.scss';
+
+.cv-form {
+    margin: 0 100px;
+    .cv-form-head {
+        display: flex;
+        justify-content: center;
+        &-title {
+            @include fontPoppins(24px);
+            margin: 30px;
+            font-weight: 500;
+            background-color: #608af5;
+            color: white;
+            width: 300px;
+            border-bottom-right-radius: 25px;
+            border-top-left-radius: 25px;
+            box-shadow: 3px 2px 10px #14279b;
+            text-align: center;
+        }
+    }
+    &__form {
+        &-group {
+            @include fontPoppins(20px);
+            text-align: left;
+            margin: 0 50px;
+            color: #14279b;
+        }
+    }
+}
