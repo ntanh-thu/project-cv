@@ -6,6 +6,7 @@
         @include fontPoppins(24px);
         color: #14279b;
         padding: 10px;
+        text-align: center;
     }
     &-icon {
         display: flex;
@@ -14,6 +15,8 @@
             display: flex;
             flex-direction: column;
             text-transform: capitalize;
+            text-align: center;
+            cursor: pointer;
             @include fontPoppins(24px);
             span {
                 background-image: url('../../assets/imgs/Vector.png');
