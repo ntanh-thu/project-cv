@@ -12,16 +12,16 @@ function Education() {
                             {fields.map((field, index) => (
                                 <div key={field.key} style={{}}>
                                     <div>
-                                        <Form.Item name={[index, 'education']} label="Ngành học / Môn học">
+                                        <Form.Item name={[index, 'education']} required label="Ngành học / Môn học">
                                             <Input></Input>
                                         </Form.Item>
-                                        <Form.Item name={[index, 'school']} label="Tên trường học">
+                                        <Form.Item name={[index, 'school']} required label="Tên trường học">
                                             <Input></Input>
                                         </Form.Item>
-                                        <Form.Item name={[index, 'scholastic']} label="Niên khóa">
+                                        <Form.Item name={[index, 'scholastic']} required label="Niên khóa">
                                             <DatePicker.RangePicker />
                                         </Form.Item>
-                                        <Form.Item name={[index, 'description']} label="Mô tả chi tiết">
+                                        <Form.Item name={[index, 'description']} required label="Mô tả chi tiết">
                                             <Input.TextArea></Input.TextArea>
                                         </Form.Item>
                                     </div>

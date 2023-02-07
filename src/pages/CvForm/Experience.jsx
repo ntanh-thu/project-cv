@@ -12,13 +12,13 @@ function Experience() {
                             {fields.map((field, index) => (
                                 <div key={field.key} style={{}}>
                                     <div>
-                                        <Form.Item name={[index, 'position']} label="Vị trí làm việc">
+                                        <Form.Item name={[index, 'position']} required label="Vị trí làm việc">
                                             <Input></Input>
                                         </Form.Item>
-                                        <Form.Item name={[index, 'company']} label="Tên công ty">
+                                        <Form.Item name={[index, 'company']} required label="Tên công ty">
                                             <Input></Input>
                                         </Form.Item>
-                                        <Form.Item name={[index, 'workingTime']} label="Bắt đầu - Kết thúc">
+                                        <Form.Item name={[index, 'workingTime']} required label="Bắt đầu - Kết thúc">
                                             <DatePicker.RangePicker></DatePicker.RangePicker>
                                         </Form.Item>
                                     </div>

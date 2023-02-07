@@ -12,16 +12,16 @@ function Activity() {
                             {fields.map((field, index) => (
                                 <div key={field.key}>
                                     <div>
-                                        <Form.Item name={[index, 'position']} label="Vị trí tham gia">
+                                        <Form.Item name={[index, 'position']} required label="Vị trí tham gia">
                                             <Input></Input>
                                         </Form.Item>
-                                        <Form.Item name={[index, 'organization']} label="Tên tổ chức">
+                                        <Form.Item name={[index, 'organization']} required label="Tên tổ chức">
                                             <Input></Input>
                                         </Form.Item>
-                                        <Form.Item name={[index, 'participationTime']} label="Thời gian">
+                                        <Form.Item name={[index, 'participationTime']} required label="Thời gian">
                                             <DatePicker.RangePicker></DatePicker.RangePicker>
                                         </Form.Item>
-                                        <Form.Item name={[index, 'description']} label="Mô tả chi tiết">
+                                        <Form.Item name={[index, 'description']} required label="Mô tả chi tiết">
                                             <Input></Input>
                                         </Form.Item>
                                     </div>

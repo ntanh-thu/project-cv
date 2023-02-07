@@ -20,8 +20,8 @@ function CvForm() {
         target: '',
         activity: [{ position: '', organization: '', participationTime: '', description: '' }],
         skills: [{ skillName: '', description: '' }],
-        educations: [{ description: undefined, education: undefined, scholastic: undefined, school: undefined }],
-        experience: [{ company: undefined, position: undefined, workingTime: undefined }]
+        educations: [{ description: '', education: '', scholastic: '', school: '' }],
+        experience: [{ company: '', position: '', workingTime: '' }]
     };
     useEffect(() => {
         form.setFieldsValue(newData);
@@ -40,28 +40,28 @@ function CvForm() {
                 onFinish={handleFinish}
             >
                 <div className="cv-form__form-group">Thông tin cơ bản</div>
-                <Form.Item name="fullName" label="Họ và Tên">
+                <Form.Item name="fullName" label="Họ và Tên" required>
                     <Input></Input>
                 </Form.Item>
-                <Form.Item name="target" label="Mục tiêu nghề nghiệp">
+                <Form.Item name="target" label="Mục tiêu nghề nghiệp" required>
                     <Input.TextArea></Input.TextArea>
                 </Form.Item>
                 <div className="cv-form__form-group">Thông tin liên hệ</div>
-                <Form.Item name="dayOfBirth" label="Ngày sinh" style={{ flex: 'none' }}>
+                <Form.Item name="dayOfBirth" label="Ngày sinh" style={{ flex: 'none' }} required>
                     <DatePicker />
                 </Form.Item>
-                <Form.Item name="email" label="Email">
+                <Form.Item name="email" label="Email" required>
                     <Input type="email"></Input>
                 </Form.Item>
-                <Form.Item name="phone" label="Số điện thoại">
+                <Form.Item name="phone" label="Số điện thoại" required>
                     <Input type="phone"></Input>
                 </Form.Item>
-                <Form.Item name="address" label="Địa chỉ">
+                <Form.Item name="address" label="Địa chỉ" required>
                     <Input.TextArea></Input.TextArea>
                 </Form.Item>
                 <Skills />
                 <div className="cv-form__form-group">Sở thích</div>
-                <Form.Item name="hobby" label="Sở thích">
+                <Form.Item name="hobby" label="Sở thích" required>
                     <Input.TextArea></Input.TextArea>
                 </Form.Item>
                 <Education />
