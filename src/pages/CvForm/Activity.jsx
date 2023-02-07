@@ -10,7 +10,7 @@ function Activity() {
                     return (
                         <div>
                             {fields.map((field, index) => (
-                                <div key={field.key} style={{}}>
+                                <div key={field.key}>
                                     <div>
                                         <Form.Item name={[index, 'position']} label="Vị trí tham gia">
                                             <Input></Input>

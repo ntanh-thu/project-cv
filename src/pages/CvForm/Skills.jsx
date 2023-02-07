@@ -10,7 +10,7 @@ function Skills() {
                     return (
                         <div>
                             {fields.map((field, index) => (
-                                <div key={field.key} style={{ }}>
+                                <div key={field.key}>
                                     <div>
                                         <Form.Item name={[index, 'skillName']} label="Tên kỹ năng" rules={[{ required: true }]}>
                                             <Input></Input>

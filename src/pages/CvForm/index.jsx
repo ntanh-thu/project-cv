@@ -1,5 +1,5 @@
 import { DatePicker, Form, Input } from 'antd';
-import { React } from 'react';
+import { React, useEffect } from 'react';
 import Activity from './Activity';
 import Education from './Education';
 import Experience from './Experience';
@@ -10,12 +10,35 @@ function CvForm() {
     const handleFinish = (finalData) => {
         console.log(finalData);
     };
+    const newData = {
+        fullName: '',
+        address: '',
+        dayOfBirth: '',
+        email: '',
+        hobby: '',
+        phone: '',
+        target: '',
+        activity: [{ position: '', organization: '', participationTime: '', description: '' }],
+        skills: [{ skillName: '', description: '' }],
+        educations: [{ description: undefined, education: undefined, scholastic: undefined, school: undefined }],
+        experience: [{ company: undefined, position: undefined, workingTime: undefined }]
+    };
+    useEffect(() => {
+        form.setFieldsValue(newData);
+    }, []);
     return (
         <div className="cv-form">
             <div className="cv-form-head">
                 <div className="cv-form-head-title">Thông tin của CV</div>
             </div>
-            <Form labelCol={{ span: 6 }} wrapperCol={{ span: 15 }} className="cv-form__form" form={form} onFinish={handleFinish}>
+            <Form
+                labelCol={{ span: 6 }}
+                initialValues={newData}
+                wrapperCol={{ span: 15 }}
+                className="cv-form__form"
+                form={form}
+                onFinish={handleFinish}
+            >
                 <div className="cv-form__form-group">Thông tin cơ bản</div>
                 <Form.Item name="fullName" label="Họ và Tên">
                     <Input></Input>
