@@ -1,80 +1,83 @@
 import { DatePicker, Form, Input } from 'antd';
-import { React } from 'react';
+import { React, useEffect } from 'react';
+import Activity from './Activity';
+import Education from './Education';
+import Experience from './Experience';
+import Skills from './Skills';
 
 function CvForm() {
+    const [form] = Form.useForm();
+    const handleFinish = (finalData) => {
+        console.log(finalData);
+    };
+    const newData = {
+        fullName: '',
+        address: '',
+        dayOfBirth: '',
+        email: '',
+        hobby: '',
+        phone: '',
+        target: '',
+        activity: [{ position: '', organization: '', participationTime: '', description: '' }],
+        skills: [{ skillName: '', description: '' }],
+        educations: [{ description: '', education: '', scholastic: '', school: '' }],
+        experience: [{ company: '', position: '', workingTime: '' }]
+    };
+    useEffect(() => {
+        form.setFieldsValue(newData);
+    }, []);
     return (
         <div className="cv-form">
             <div className="cv-form-head">
-                <div className="cv-form-head-title">Thông tin cơ bản</div>
+                <div className="cv-form-head-title">Thông tin của CV</div>
             </div>
-            <Form labelCol={{ span: 6 }} wrapperCol={{ span: 15 }} className="cv-form__form">
-                <Form.Item name="fullName" label="Họ và Tên">
+            <Form
+                labelCol={{ span: 6 }}
+                initialValues={newData}
+                wrapperCol={{ span: 15 }}
+                className="cv-form__form"
+                form={form}
+                onFinish={handleFinish}
+            >
+                <div className="cv-form__form-group">Thông tin cơ bản</div>
+                <Form.Item name="fullName" label="Họ và Tên" required>
                     <Input></Input>
                 </Form.Item>
-                <Form.Item name="target" label="Mục tiêu nghề nghiệp">
+                <Form.Item name="target" label="Mục tiêu nghề nghiệp" required>
                     <Input.TextArea></Input.TextArea>
                 </Form.Item>
                 <div className="cv-form__form-group">Thông tin liên hệ</div>
-                <Form.Item name="dayOfBirth" label="Ngày sinh" style={{ flex: 'none' }}>
+                <Form.Item name="dayOfBirth" label="Ngày sinh" style={{ flex: 'none' }} required>
                     <DatePicker />
                 </Form.Item>
-                <Form.Item name="email" label="Email">
+                <Form.Item name="email" label="Email" required>
                     <Input type="email"></Input>
                 </Form.Item>
-                <Form.Item name="phone" label="Số điện thoại">
+                <Form.Item name="phone" label="Số điện thoại" required>
                     <Input type="phone"></Input>
                 </Form.Item>
-                <Form.Item name="address" label="Địa chỉ">
+                <Form.Item name="address" label="Địa chỉ" required>
                     <Input.TextArea></Input.TextArea>
                 </Form.Item>
-                <div className="cv-form__form-group">Các kỹ năng</div>
-                <Form.Item name="skill" label="Tên kỹ năng">
-                    <Input></Input>
-                </Form.Item>
-                <Form.Item name="description" label="Mô tả kỹ năng">
-                    <Input></Input>
-                </Form.Item>
+                <Skills />
                 <div className="cv-form__form-group">Sở thích</div>
-                <Form.Item name="hobby" label="Sở thích">
+                <Form.Item name="hobby" label="Sở thích" required>
                     <Input.TextArea></Input.TextArea>
                 </Form.Item>
-                <div className="cv-form__form-group">Học vấn</div>
-                <Form.Item name="" label="Ngành học / Môn học">
-                    <Input></Input>
-                </Form.Item>
-                <Form.Item name="school" label="Tên trường học">
-                    <Input></Input>
-                </Form.Item>
-                <Form.Item name="" label="Niên khóa">
-                    <DatePicker.RangePicker />
-                </Form.Item>
-                <Form.Item name="description" label="Mô tả chi tiết">
-                    <Input.TextArea></Input.TextArea>
-                </Form.Item>
-                <div className="cv-form__form-group">Kinh nghiệm làm việc</div>
-                <Form.Item name="" label="Vị trí làm việc">
-                    <Input></Input>
-                </Form.Item>
-                <Form.Item name="" label="Tên công ty">
-                    <Input></Input>
-                </Form.Item>
-                <Form.Item name="" label="Bắt đầu - Kết thúc">
-                    <DatePicker.RangePicker></DatePicker.RangePicker>
-                </Form.Item>
-                <div className="cv-form__form-group">Hoạt động</div>
-                <Form.Item name="" label="Vị trí tham gia">
-                    <Input></Input>
-                </Form.Item>
-                <Form.Item name="" label="Tên tổ chức">
-                    <Input></Input>
-                </Form.Item>
-                <Form.Item name="" label="Thời gian">
-                    <DatePicker.RangePicker></DatePicker.RangePicker>
-                </Form.Item>
-                <Form.Item name="" label="Mô tả chi tiết">
-                    <Input></Input>
-                </Form.Item>
+                <Education />
+                <Experience />
+                <Activity />
             </Form>
+            <div className="cv-form-footer">
+                <div>Trở về</div>
+                <div
+                    onClick={() => {
+                        form.submit();
+                    }}
+                >
+                    Chọn mẫu CV
+                </div>
+            </div>
         </div>
     );
 }

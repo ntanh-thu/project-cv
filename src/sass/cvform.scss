@@ -19,11 +19,27 @@
         }
     }
     &__form {
+        padding: 20px 0;
+        border-radius: 10px;
+        margin: 0px 0 25px;
+        box-shadow: 2px 2px 10px #608af5;
         &-group {
             @include fontPoppins(20px);
             text-align: left;
             margin: 0 50px;
             color: #14279b;
+        }
+    }
+    &-footer {
+        display: flex;
+        justify-content: space-between;
+        div {
+            background-color: #608af5;
+            @include fontPoppins(18px);
+            color: white;
+            padding: 10px;
+            border-radius: 7px;
+            cursor: pointer;
         }
     }
 }
