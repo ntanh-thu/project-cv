@@ -1,12 +1,13 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import CvForm from './pages/CvForm';
+import Home from './pages/Home';
 
 function Router() {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <div>Home Page</div>
+            element: <Home />
         },
         {
             path: '/form',
