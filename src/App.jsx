@@ -4,12 +4,13 @@ import Footer from './components/Layout/Footer';
 import './App.css';
 import './sass/index.scss';
 import CvForm from './pages/CvForm';
+import Router from './routers';
 
 function App() {
     return (
         <div className="App">
             <Header></Header>
-            <CvForm></CvForm>
+            <Router />
             <Footer></Footer>
         </div>
     );
