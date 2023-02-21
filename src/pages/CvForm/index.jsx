@@ -1,9 +1,9 @@
-import { Col, DatePicker, Form, Input, Row, Upload } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import { Col, DatePicker, Form, Input, Row } from 'antd';
 import { React, useEffect } from 'react';
 import Activity from './Activity';
 import Education from './Education';
 import Experience from './Experience';
+import Information from './Information';
 import Skills from './Skills';
 
 function CvForm() {
@@ -27,9 +27,7 @@ function CvForm() {
     useEffect(() => {
         form.setFieldsValue(newData);
     }, []);
-    const beforeUpload = (file) => {
-        console.log(file);
-    };
+
     return (
         <Row className="cv-form">
             <Col span={18}>
@@ -46,24 +44,7 @@ function CvForm() {
                     labelAlign="left"
                     scrollToFirstError="true"
                 >
-                    <div className="cv-form__form-group">Thông tin cơ bản</div>
-                    <Row>
-                        <Col span={6}>
-                            <Form.Item name="img">
-                                <Upload name="img" beforeUpload={beforeUpload}>
-                                    <PlusOutlined />
-                                </Upload>
-                            </Form.Item>
-                        </Col>
-                        <Col span={18}>
-                            <Form.Item name="fullName" label="Họ và Tên" required>
-                                <Input></Input>
-                            </Form.Item>
-                            <Form.Item name="target" label="Mục tiêu nghề nghiệp" required>
-                                <Input.TextArea></Input.TextArea>
-                            </Form.Item>
-                        </Col>
-                    </Row>
+                    <Information />
                     <div className="cv-form__form-group">Thông tin liên hệ</div>
                     <Form.Item name="dayOfBirth" label="Ngày sinh" style={{ flex: 'none' }} required>
                         <DatePicker />

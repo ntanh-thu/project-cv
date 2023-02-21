@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import CvForm from './pages/CvForm';
-import Home from './pages/Home';
+import Home from './pages/Home/home.jsx';
 
 function Router() {
     const router = createBrowserRouter([
