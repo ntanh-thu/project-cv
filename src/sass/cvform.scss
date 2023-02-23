@@ -1,5 +1,16 @@
 @import './constant.scss';
 
+input[type='file']::file-selector-button {
+    visibility: hidden;
+}
+
+input[type='file']::-webkit-file-upload-button {
+    visibility: hidden;
+}
+input[type='file']:focus {
+    display: none;
+}
+
 .cv-form {
     margin: 0 100px;
     .cv-form-head {

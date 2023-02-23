@@ -12,16 +12,36 @@ function Education() {
                             {fields.map((field, index) => (
                                 <div key={field.key} style={{}}>
                                     <div>
-                                        <Form.Item name={[index, 'education']} required label="Ngành học / Môn học">
+                                        <Form.Item
+                                            name={[index, 'education']}
+                                            required
+                                            label="Ngành học / Môn học"
+                                            rules={[{ required: true, message: 'Ngành học chưa được điền' }]}
+                                        >
                                             <Input></Input>
                                         </Form.Item>
-                                        <Form.Item name={[index, 'school']} required label="Tên trường học">
+                                        <Form.Item
+                                            name={[index, 'school']}
+                                            required
+                                            label="Tên trường học"
+                                            rules={[{ required: true, message: 'Tên trường của ngành bạn học' }]}
+                                        >
                                             <Input></Input>
                                         </Form.Item>
-                                        <Form.Item name={[index, 'scholastic']} required label="Niên khóa">
+                                        <Form.Item
+                                            name={[index, 'scholastic']}
+                                            required
+                                            label="Niên khóa"
+                                            rules={[{ required: true, message: 'Niên khóa của ngành bạn học' }]}
+                                        >
                                             <DatePicker.RangePicker />
                                         </Form.Item>
-                                        <Form.Item name={[index, 'description']} required label="Mô tả chi tiết">
+                                        <Form.Item
+                                            name={[index, 'description']}
+                                            required
+                                            label="Mô tả chi tiết"
+                                            rules={[{ required: true, message: 'Hãy miêu tả chi tiết về ngành bạn học' }]}
+                                        >
                                             <Input.TextArea></Input.TextArea>
                                         </Form.Item>
                                     </div>

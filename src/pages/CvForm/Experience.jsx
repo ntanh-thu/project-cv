@@ -12,13 +12,28 @@ function Experience() {
                             {fields.map((field, index) => (
                                 <div key={field.key} style={{}}>
                                     <div>
-                                        <Form.Item name={[index, 'position']} required label="Vị trí làm việc">
+                                        <Form.Item
+                                            name={[index, 'position']}
+                                            required
+                                            label="Vị trí làm việc"
+                                            rules={[{ required: true, message: 'Vui lòng điền vị trí bạn từng làm việc' }]}
+                                        >
                                             <Input></Input>
                                         </Form.Item>
-                                        <Form.Item name={[index, 'company']} required label="Tên công ty">
+                                        <Form.Item
+                                            name={[index, 'company']}
+                                            required
+                                            label="Tên công ty"
+                                            rules={[{ required: true, message: 'Tên công ty bạn từng làm việc' }]}
+                                        >
                                             <Input></Input>
                                         </Form.Item>
-                                        <Form.Item name={[index, 'workingTime']} required label="Bắt đầu - Kết thúc">
+                                        <Form.Item
+                                            name={[index, 'workingTime']}
+                                            required
+                                            label="Bắt đầu - Kết thúc"
+                                            rules={[{ required: true, message: 'Bạn đã làm vị trí trên được bao lâu' }]}
+                                        >
                                             <DatePicker.RangePicker></DatePicker.RangePicker>
                                         </Form.Item>
                                     </div>
