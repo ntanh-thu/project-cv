@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     /* border: 0.5px solid black; */
+    font-family: 'Roboto', sans-serif;
 }
 .App {
     height: 100vh;

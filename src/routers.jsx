@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import CvForm from './pages/CvForm';
 import Home from './pages/Home/home.jsx';
+import Template2 from './pages/Template/Template2';
 
 function Router() {
     const router = createBrowserRouter([
@@ -15,7 +16,7 @@ function Router() {
         },
         {
             path: '/template',
-            element: <div>template</div>
+            element: <Template2 />
         }
     ]);
     return <RouterProvider router={router}></RouterProvider>;

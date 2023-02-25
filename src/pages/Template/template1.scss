@@ -1,0 +1,108 @@
+.cv {
+    width: 210mm;
+    min-height: 260mm;
+    margin: 0 auto;
+    box-shadow: 0 0 1px rgb(0 0 0 / 25%);
+    background-color: #fff;
+    &-page {
+        padding: 10mm 0;
+        padding-bottom: 10mm;
+        font-size: 14px;
+        color: #494949;
+        font-family: 'roboto,Arial,sans-serif';
+        &-header {
+            height: 180px;
+            padding: 0 30px;
+            margin-bottom: 10mm;
+            border-left: 5px solid #ff9f0a;
+            border-right: 5px solid #ff9f0a;
+            display: flex;
+            &-name-and-title {
+                display: flex;
+                &__img {
+                    border-radius: 10px;
+                    height: 200px;
+                    width: 125px;
+                    // min-width: 135px;
+                }
+                &__fullname {
+                    margin-left: 10px;
+                    &-name {
+                        font-size: 24px;
+                        font-weight: 700;
+                        color: #ff9f0a;
+                        word-break: break-work;
+                    }
+                    &-title {
+                        padding: 5px 10px;
+                        border-left: 5px solid #ff9f0a;
+                    }
+                }
+            }
+            &__profile {
+                div {
+                    text-align: end;
+                    margin: 0 0 8px;
+                    font-size: 14px;
+                    color: #494949;
+                    line-height: 1.4em;
+                    font-family: 'Roboto', sans-serif;
+                }
+            }
+        }
+        &-body {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            &-group {
+                padding: 10px 15px;
+                // inline-size: 50%;
+                // overflow-wrap: break-word;
+                &-name {
+                    font-size: 20px;
+                    color: #535353;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    word-break: break-word;
+                    padding: 0 0 5px;
+                }
+                &-content {
+                    border-top: 5px solid #ff9f0a;
+                    padding: 10px 0;
+                    div {
+                        padding: 5px 0;
+                    }
+                    &-title {
+                        font-weight: 700;
+                        color: #777;
+                        font-size: 16px;
+                    }
+                    &-info {
+                        font-size: 14px;
+                        color: #ccc;
+                        display: flex;
+                        div {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-right: 5px;
+                            img {
+                                margin-right: 5px;
+                            }
+                        }
+                        &__first {
+                        }
+                        &__last {
+                        }
+                    }
+                    &-descript {
+                        font-size: 14px;
+                        color: #494949;
+                        line-height: 1.4em;
+                        font-family: 'Roboto', sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}

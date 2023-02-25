@@ -1,0 +1,160 @@
+.cv {
+    width: 210mm;
+    min-height: 260mm;
+    margin: 0 auto;
+    box-shadow: 0 0 1px rgb(0 0 0 / 25%);
+    background-color: #fff;
+    &-page {
+        padding: 10mm 0;
+        padding-bottom: 10mm;
+        font-size: 14px;
+        color: #494949;
+        font-family: 'roboto,Arial,sans-serif';
+        &-header {
+            margin: 0 20px 32px;
+            background: #f4e8f8;
+            border-radius: 30px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            div {
+                margin: 0 20px;
+            }
+            &-img-block {
+                img {
+                    width: 160px;
+                    height: 160px;
+                    border-radius: 50%;
+                }
+            }
+            &-title-block {
+                &-name {
+                    width: 100%;
+                    font-weight: 700;
+                    font-size: 28px;
+                    text-transform: uppercase;
+                    line-height: 42px;
+                    color: #ff881d;
+                    margin-bottom: 20px;
+                    display: block;
+                }
+                &-des {
+                    width: 100%;
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin-top: 4px;
+                    color: #496c92;
+                    font-weight: 700;
+                    font-size: 20px;
+                }
+            }
+        }
+        &-body {
+            padding: 0 16px 32px;
+            display: flex;
+            &-col-left {
+                width: 50%;
+                .content-group {
+                    width: 100%;
+                    margin-bottom: 45px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    padding: 35px 20px 20px;
+                    background: #f4e8f8;
+                    border-radius: 30px;
+                    position: relative;
+                    &-title {
+                        font-size: 18px;
+                        line-height: 32px;
+                        font-weight: 500;
+                        background-color: #faf6c6;
+                        color: #ff881d;
+                        position: absolute;
+                        font-weight: 700;
+                        display: inline-block;
+                        padding: 5px 10px;
+                        border-radius: 15px;
+                        top: -20px;
+                    }
+                    &-info {
+                        padding: 5px 0;
+                        display: flex;
+                        align-items: center;
+                        color: #496c92;
+                        line-height: 1.5;
+                        font-family: 'Roboto', sans-serif;
+                        img {
+                            margin-right: 5px;
+                        }
+                    }
+                    &-skill {
+                        &-name {
+                            color: #ff881d;
+                            font-weight: 700;
+                            display: block;
+                            margin-bottom: 5px;
+                        }
+                        &-des {
+                            color: #496c92;
+                            line-height: 1.5;
+                        }
+                    }
+                }
+            }
+            &-col-right {
+                width: 50%;
+                .content-block {
+                    width: 100%;
+                    margin-bottom: 45px;
+                    border-radius: 5px;
+                    padding: 0px 20px 20px;
+                    border-radius: 30px;
+                    position: relative;
+                    &-name {
+                        font-size: 18px;
+                        line-height: 32px;
+                        background-color: #f4e8f8;
+                        color: #ff881d;
+                        font-weight: 700;
+                        display: inline;
+                        padding: 5px 10px;
+                        border-radius: 15px;
+                        margin-bottom: 40px;
+                    }
+                    &-info {
+                        margin-top: 10px;
+                        padding: 10px 0 0 12.5px;
+                        position: relative;
+                        img {
+                            position: absolute;
+                            top: -15px;
+                            left: 0;
+                        }
+                        &-group {
+                            padding: 15px 0 15px 12.5px;
+                            border-left: 5px solid #faf6c6;
+                            div {
+                                padding: 10px 0;
+                            }
+                            &-title {
+                                color: #ff881d;
+                                font-size: 15px;
+                                font-weight: 700;
+                                margin-bottom: 10px;
+                            }
+                            &-subtitle {
+                                color: #496c92;
+                                line-height: 1.5;
+                                font-weight: 600;
+                            }
+                            &-des {
+                                color: #496c92;
+                                line-height: 1.5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
