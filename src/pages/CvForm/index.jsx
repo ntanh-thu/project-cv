@@ -1,15 +1,22 @@
-import { Col, DatePicker, Form, Input, Row } from 'antd';
 import { React, useEffect } from 'react';
+import { DatePicker, Form, Input, Radio } from 'antd';
+import { useDispatch } from 'react-redux';
+import { getValueInForm } from '../../reduxSlice/cvFormSlice';
 import Activity from './Activity';
 import Education from './Education';
 import Experience from './Experience';
 import Information from './Information';
 import Skills from './Skills';
+import { useNavigate } from 'react-router-dom';
 
 function CvForm() {
+    const dispatch = useDispatch();
     const [form] = Form.useForm();
+    const navigate = useNavigate();
     const handleFinish = (finalData) => {
         console.log(finalData);
+        dispatch(getValueInForm(finalData));
+        navigate('../template');
     };
     const newData = {
         fullName: '',
@@ -28,9 +35,10 @@ function CvForm() {
         form.setFieldsValue(newData);
     }, []);
 
+    const dateFormat = 'YYYY/MM/DD';
+
     return (
         <div className="cv-form">
-            {/* <Col> */}
             <div className="cv-form-head">
                 <div className="cv-form-head-title">Thông tin của CV</div>
             </div>
@@ -53,7 +61,14 @@ function CvForm() {
                     required
                     rules={[{ required: true, message: 'Vui lòng nhập ngày sinh của bạn' }]}
                 >
-                    <DatePicker />
+                    <DatePicker format={dateFormat} />
+                </Form.Item>
+                <Form.Item name="sex" label="Giới tính" required rules={[{ required: true, message: 'Vui lòng chọn mục giới tính' }]}>
+                    <Radio.Group>
+                        <Radio value={0}>Nu</Radio>
+                        <Radio value={1}>Nam</Radio>
+                        <Radio value={2}>Orther</Radio>
+                    </Radio.Group>
                 </Form.Item>
                 <Form.Item name="email" label="Email" required rules={[{ required: true, message: 'Hãy nhập email của bạn' }]}>
                     <Input type="email"></Input>
@@ -83,8 +98,6 @@ function CvForm() {
                     Chọn mẫu CV
                 </div>
             </div>
-            {/* </Col> */}
-            {/* <Col span={6}></Col> */}
         </div>
     );
 }

@@ -36,6 +36,14 @@ function Experience() {
                                         >
                                             <DatePicker.RangePicker></DatePicker.RangePicker>
                                         </Form.Item>
+                                        <Form.Item
+                                            name={[index, 'descriptWork']}
+                                            required
+                                            label="Mô tả công việc"
+                                            rules={[{ required: true, message: 'Hãy mô tả vị trí công việc bạn làm' }]}
+                                        >
+                                            <Input.TextArea />
+                                        </Form.Item>
                                     </div>
                                     {fields.length > 1 ? (
                                         <div>
