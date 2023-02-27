@@ -1,12 +1,10 @@
 import dayjs from 'dayjs';
-import moment from 'moment/moment';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './template1.scss';
 function Template1() {
     const valueCV = useSelector((state) => state.createCv.cvValue);
-    console.log(typeof valueCV.educations.dayOfbirth);
-    const getSex = (value) => {
+    const getGender = (value) => {
         if (value === 0) {
             return 'Nữ';
         } else if (value === 1) {
@@ -29,12 +27,12 @@ function Template1() {
                             </div>
                         </div>
                         <div className="cv-page-header__profile">
-                            <div>Gioi tinh : {getSex(valueCV.sex)}</div>
+                            <div>Gioi tinh : {getSex(valueCV.gender)}</div>
                             <div>Ngay sinh : {dayjs(valueCV.dayOfbirth).format('DD/MM/YYYY')} </div>
                             <div>Email : {valueCV.email}</div>
                             <div>Dien thoai : {valueCV.phone}</div>
                             <div>Dia chi : {valueCV.address}</div>
-                            <div style={{ wordWrap: 'break-word' }}>Website : https://github.com/ntanh-thu?tab=repositories</div>
+                            {valueCV.website !== '' && <div style={{ wordWrap: 'break-word' }}>Website : {valueCV.website}</div>}
                         </div>
                     </div>
                     <div className="cv-page-body">
@@ -88,7 +86,7 @@ function Template1() {
                             ))}
                         </div>
 
-                        {valueCV.activity.position !== '' && (
+                        {valueCV.activity[0].position !== '' && (
                             <div className="cv-page-body-group">
                                 <div className="cv-page-body-group-name">Hoạt động</div>
                                 {valueCV.activity.map((item, index) => (

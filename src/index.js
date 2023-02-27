@@ -5,11 +5,36 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from '../src/store';
 import { Provider } from 'react-redux';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import CvForm from './pages/CvForm';
+import Home from './pages/Home/home.jsx';
+import ListTemplate from './pages/Template';
+import Template1 from './pages/Template/Template1';
+import Template2 from './pages/Template/Template2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <App />,
+        children: [
+            { path: 'home', element: <Home /> },
+            {
+                path: 'form',
+                element: <CvForm />
+            },
+            {
+                path: 'template',
+                element: <ListTemplate />
+            },
+            { path: 'template1', element: <Template1 /> },
+            { path: 'template2', element: <Template2 /> }
+        ]
+    }
+]);
 root.render(
     <Provider store={store}>
-        <App />
+        <RouterProvider router={router}></RouterProvider>
     </Provider>
 );
 

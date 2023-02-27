@@ -1,5 +1,5 @@
 import { React } from 'react';
-import { Col, Form, Input, Row, Upload } from 'antd';
+import { Col, Form, Input, Row } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 
@@ -51,7 +51,12 @@ function Information() {
                     <Form.Item name="fullName" label="Họ và Tên" required rules={[{ required: true, message: 'Vui lòng nhập tên của bạn' }]}>
                         <Input></Input>
                     </Form.Item>
-                    <Form.Item name="target" label="Mục tiêu nghề nghiệp" required rules={[{ required: true, message: 'Hãy nhập mục tiêu nghề nghiệp của bạn' }]}>
+                    <Form.Item
+                        name="target"
+                        label="Mục tiêu nghề nghiệp"
+                        required
+                        rules={[{ required: true, message: 'Hãy nhập mục tiêu nghề nghiệp của bạn' }]}
+                    >
                         <Input.TextArea></Input.TextArea>
                     </Form.Item>
                 </Col>

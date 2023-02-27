@@ -63,7 +63,7 @@ function CvForm() {
                 >
                     <DatePicker format={dateFormat} />
                 </Form.Item>
-                <Form.Item name="sex" label="Giới tính" required rules={[{ required: true, message: 'Vui lòng chọn mục giới tính' }]}>
+                <Form.Item name="gender" label="Giới tính" required rules={[{ required: true, message: 'Vui lòng chọn mục giới tính' }]}>
                     <Radio.Group>
                         <Radio value={0}>Nu</Radio>
                         <Radio value={1}>Nam</Radio>
@@ -79,11 +79,15 @@ function CvForm() {
                 <Form.Item name="address" label="Địa chỉ" required rules={[{ required: true, message: 'Hãy nhập địa chỉ của bạn' }]}>
                     <Input.TextArea></Input.TextArea>
                 </Form.Item>
+                <Form.Item name="website" label="Website">
+                    <Input></Input>
+                </Form.Item>
                 <Skills />
                 <div className="cv-form__form-group">Sở thích</div>
                 <Form.Item name="hobby" label="Sở thích" required rules={[{ required: true, message: 'Hãy nhập sở thích của bạn' }]}>
                     <Input.TextArea></Input.TextArea>
                 </Form.Item>
+
                 <Education />
                 <Experience />
                 <Activity />
